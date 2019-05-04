@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+            let x;
+			let respostaCerta = false;
+			
+			do{
+				x = prompt('Digite "Oi"');
+				if(x == "Oi" || x == "oi" || x == "OI"){
+					alert('Parabéns!');
+					respostaCerta = true;
+				} else {
+					alert('Errado! Tente novamente!');
+				}
+			}while(!respostaCerta);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

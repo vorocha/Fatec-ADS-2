@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+			
+			/* 
+            Escreva um programa que receba um número correspondente
+            a um mês (1 a 12) e informe ao usuário com alert() quantos
+            dias tem o mês informado (28, 30 ou 31 - ignore o caso dos
+            anos bissextos).
+            Utilize a estrutura switch...case.
+			*/
+			
+			let mes;
+			
+			mes = prompt("Informe um mês (1, 2 ...12): ");
+			mes = parseInt(mes);
+			
+			switch(mes){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					alert(`O mes ${mes} tem 31 dias`);
+					break;				
+				case 2:
+					alert(`O mes ${mes} tem 28 dias`);
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					alert(`O mes ${mes} tem 30 dias`);
+					break;
+				default:
+					alert("Mes INVALIDO");
+			}
+			
+           
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

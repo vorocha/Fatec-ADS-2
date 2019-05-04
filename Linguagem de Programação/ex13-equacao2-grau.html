@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         /*
+
+            Escreva uma função que receba os valores a, b e c de 
+            uma equação do 2º grau e calcule suas raízes de acordo
+            com a fórmula de Baskhara.
+
+            Essa função deve retornar um vetor com as raízes, ou
+            um vetor vazio, caso não haja solução no domínio dos números
+            racionais.
+             
+         */
+		
+		function equacao(a, b, c = 0){
+		
+			let delta, r1, r2, raizes = [];
+			
+			if(a == 0){
+				return raizes;
+			} else{	
+				delta = (b*b) - (4*a*c);
+				if(delta < 0){
+					return raizes;
+				} else if (delta == 0){
+					r1 = (-b + Math.sqrt(delta))/(2*a);
+					return r1;
+				} else{
+					r1 = (-b + Math.sqrt(delta))/(2*a);
+					raizes.push(r1);
+					r2 = (-b - Math.sqrt(delta))/(2*a);
+					raizes.push(r2);
+					
+					return raizes;
+				}
+			}
+		}
+        
+		document.write(equacao(4, -4, 1));
+		
+      </script>
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+   </body>
+</html>

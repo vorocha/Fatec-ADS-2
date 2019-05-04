@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+			
+			/* Peça para o usuário informar um ano e diga se esse ano
+            é ou não bissexto.
+            Regra:
+            SE ano É MÚLTIPLO DE 400
+               ENTÃO ano é bissexto
+            SENÃO, SE ano é MÚLTIPLO DE 100
+               ENTÃO ano _não_ é bissexto
+            SENÃO, SE ano É MÚLTIPLO DE 4
+               ENTÃO ano é bissexto
+            SENÃO
+               ano _não_ é bissexto
+            Para testar:
+            1973: N
+            2000: S
+            1800: N
+            2002: N
+            2016: S
+               
+			*/
+			
+			let ano;
+			let bissexto;
+			
+			ano = prompt("Informe um ano (4 digitos): ");
+			
+			if(ano%400 == 0){
+				bissexto = 'é';
+			} else if (ano%100 == 0){
+				bissexto = 'não é';
+			} else if (ano%4 == 0){
+				bissexto = 'é';
+			} else {
+				bissexto = 'não é';
+			}
+			
+			alert(`O ano ${ano} ${bissexto} bissexto!`);
+           
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

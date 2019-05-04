@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Minha primeira página HTML</title>
+      <script>
+      
+         'use strict'; // Modo chato do JS
+
+         /*
+
+            Escreva quatro arrow functions:
+
+            1) Uma que receba dois números e retorne o menor entre eles.
+               Dentro da função, utilize um if curto.
+
+            2) Uma que receba um número e retorne o fatorial deste número.
+
+            3) Uma que não receba nenhum argumento e exiba a mensagem
+               'ERRO: tente novamente' em um alert().
+
+            4) Uma que receba um número entre 0 e 9 e retorne uma string
+               com o respectivo número por extenso.
+
+         */
+
+		const menor = (n1, n2) => (n1 < n2 ? n1 : n2);
+		document.write(menor(10,3) + "<br/>");
+		
+		const fatorial = x => (x == 0 ? 1 : x * fatorial(x - 1));
+		document.write(fatorial(3) + "<br/>");
+		
+		const erro = () => alert('ERRO: tente novamente');
+		erro();
+		
+		const extenso = x => {
+			switch(x) {
+				case 0:
+					return "Zero";
+					break;
+				case 1:
+					return "Um";
+					break;
+				case 2:
+					return "Dois";
+					break;
+				case 3:
+					return "Três";
+					break;
+				case 4:
+					return "Quatro";
+					break;
+				case 5:
+					return "Cinco";
+					break;
+				case 6:
+					return "Seis";
+					break;
+				case 7:
+					return "Sete";
+					break;
+				case 8:
+					return "Oito";
+					break;
+				case 9:
+					return "Nove";
+					break;
+				default:
+					return "Número Inválido"
+			}
+		}
+		document.write(extenso(0));
+		
+      </script>
+   </head>
+
+   <body>
+      <h1>Título</h1>
+      <p>Isto é um parágrafo</p>
+   </body>
+</html>

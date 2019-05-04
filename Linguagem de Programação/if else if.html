@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Modelo</title>
+        <script>
+            'use strict'; //declare antes de usar qualquer variável
+
+            let x, op, y;
+			let resposta;
+
+			x = parseFloat(prompt('Primeiro número: '));
+			op = prompt('Operador matemático (+, -, *, /): ');
+			y = parseFloat(prompt('Segundo número: '));
+			if(op == "+"){
+				resposta = x+y;
+				document.write("Resultado: " + resposta);
+			} else if(op == "-"){
+				resposta = x-y;
+				document.write("Resultado: " + resposta);
+			} else if(op == "*"){
+				resposta = x*y;
+				document.write("Resultado: " + resposta);
+			} else if(op == "/"){
+				if(y != 0){
+					resposta = x/y;
+					document.write("Resultado: " + resposta);
+				} else {
+					document.write("Impossível dividir por ZERO");
+				}
+			} else {
+				document.write("Operador matemático inválido");
+			}
+			
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
