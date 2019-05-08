@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      'use strict'; // Modo "chato" do Javascript
+      
+      /*
+
+         1) Solicite ao usuário que informe uma string. Essa string
+            deve conter palavras e números, separados entre si por espaços.
+
+         2) Converta a string em um vetor, utilizando split().
+
+         3) Declare dois vetores vazios, um para conter só as palavras
+            e outro para conter só os números.
+
+         4) Percorra o vetor resultante do split() e faça a separação entre
+            palavras e números, inserindo-os nos vetores apropriados. A
+            INSERÇÃO DEVE GARANTIR QUE CADA VETOR ESTEJA SEMPRE EM ORDEM
+            ASCENDENTE. Declare e implemente funções sempre que possível.
+
+         5) Converta os vetores de palavras e de números de volta em string,
+            separados por vírgula (,). Exiba as duas strings resultantes com
+            document.write().
+
+         6) Boa diversão!         
+
+      */
+
+		let string = prompt("Informe uma string. (deve conter palavras e números, separados entre si por espaços): ");
+		
+		let split = string.split(" ");
+		
+		let palavras = [], numeros = [];
+		
+		for(let i = 0; i < split.length; i++){
+			if(isNaN(parseInt(split[i]))){
+				insereOrdenado(palavras, split[i]);
+			} else {
+				insereOrdenado(numeros, split[i]);
+			}
+		}
+		
+		function insereOrdenado(vetor, x){
+			if(vetor.length == 0){
+				vetor.push(x);
+			} else {
+				for(let i = 0; i < vetor.length; i++){
+					if(x < vetor[i]){
+						vetor.splice(i, 0, x);
+						break;
+					} else if(i == vetor.length-1){
+						vetor.push(x);
+						break;
+					}
+				}
+			}
+		}
+		
+		function converte(vetor){
+			let string = "";
+			for(let i = 0; i < vetor.length; i++){
+				string += vetor[i] + (i == vetor.length-1 ? "" : ", ");
+			}
+			return string;
+		}
+		
+		
+
+		document.write(converte(palavras) + "<br/>");
+		document.write(converte(numeros) + "<br/>");
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
