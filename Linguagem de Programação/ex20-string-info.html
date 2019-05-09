@@ -15,6 +15,8 @@
         
         table, td, th {
            border: 1px solid black;
+		   text-align: center;
+		   padding: 5px;
         }
         
       </style>
@@ -46,7 +48,22 @@
             5) A tabela deve ser construída com document.write().
 
         */
-
+		let string = prompt("Insira uma frase: ");
+		let split = string.split(" ");
+		
+		document.write("<table>");
+		document.write("<tr><th>ORIGINAL</th>");
+		document.write("<th>COMPRIMENTO</th>");
+		document.write("<th>MINÚSCULAS</th>");
+		document.write("<th>MAIÚSCULAS</th></tr>");
+		for(let i = 0; i < split.length; i++){
+			document.write(`<tr><td>${split[i]}</td>`);
+			document.write(`<td>${split[i].length}</td>`);			
+			document.write(`<td>${split[i].toLowerCase()}</td>`);
+			document.write(`<td>${split[i].toUpperCase()}</td></tr>`);
+		}		
+		document.write("</table>");
+		
       </script>
 
    </head>
