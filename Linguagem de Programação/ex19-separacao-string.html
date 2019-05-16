@@ -40,10 +40,10 @@
 		let palavras = [], numeros = [];
 		
 		for(let i = 0; i < split.length; i++){
-			if(isNaN(parseInt(split[i]))){
+			if(isNaN(split[i])){
 				insereOrdenado(palavras, split[i]);
 			} else {
-				insereOrdenado(numeros, split[i]);
+				insereOrdenado(numeros, parseFloat(split[i]));
 			}
 		}
 		
@@ -71,8 +71,11 @@
 			return string;
 		}
 		
-		
+		//com join
+		let stringPalavras = palavras.join(", ");
+		let stringNumeros = numeros.join(", ");
 
+		//com função e for
 		document.write(converte(palavras) + "<br/>");
 		document.write(converte(numeros) + "<br/>");
       </script>
