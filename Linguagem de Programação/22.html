@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      'use strict';
+      
+      /*
+         
+         * Declare e inicialize um vetor vazio.
+         * Declare um loop eterno.
+         * Dentro do loop eterno, declare e inicialize um objeto vazio
+         * Peça ao usuário para informar um nome. Se o usuário deixar 
+            em branco o nome, interrompa o loop eterno.
+         * Caso contrário, peça também idade e salário. Essas três
+            informações (nome, idade e salário) devem ser salvas em
+            propriedades do objeto anteriormente declarado.
+         * Acrescente o objeto ao vetor.
+         * Fora do loop eterno, mostre as seguintes informações:
+           - Soma dos salários de todos os funcionários informados
+           - Média dos salários de todos os funcionários informados
+           - Média da idade de todos os funcionários informados
+
+      */
+      
+	  let vetor = [];
+	  	  
+	  for(;;){
+		let obj = {};
+		obj.nome = prompt("Informe o Nome");
+		
+		if(obj.nome == ""){
+			break;
+		} else {
+			obj.idade = parseInt(prompt("Informe a Idade"));
+			obj.salario = parseFloat(prompt("Informe o Salario"));			
+			vetor.push(obj);
+		}
+	  }
+	  
+	  let somaSalario = 0, somaIdade = 0;
+	  
+	  for(let objeto of vetor){
+		somaSalario += objeto.salario;
+		somaIdade += objeto.idade;
+	  }
+	  	  
+	  document.write("Soma Salarios: " + somaSalario + "<br/>");
+	  document.write("Media Salarios: " + somaSalario / vetor.length + "<br/>");
+	  document.write("Media Idades: " + somaIdade / vetor.length + "<br/>");
+	  
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
