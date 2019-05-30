@@ -32,15 +32,22 @@
 	  	  
 	  for(;;){
 		let obj = {};
-		obj.nome = prompt("Informe o Nome");
+		obj.nome = prompt("Informe o Nome: ");
 		
 		if(obj.nome == ""){
 			break;
-		} else {
-			obj.idade = parseInt(prompt("Informe a Idade"));
-			obj.salario = parseFloat(prompt("Informe o Salario"));			
-			vetor.push(obj);
 		}
+      
+      do{
+         obj.idade = parseInt(prompt("Informe a Idade do "+obj.nome+": "));
+      }while(isNaN(obj.idade));
+      
+      do{
+         obj.salario = parseFloat(prompt("Informe o Salario do "+obj.nome+": "));		
+      }while(isNaN(obj.salario));
+      	
+      vetor.push(obj);
+	
 	  }
 	  
 	  let somaSalario = 0, somaIdade = 0;
@@ -50,9 +57,9 @@
 		somaIdade += objeto.idade;
 	  }
 	  	  
-	  document.write("Soma Salarios: " + somaSalario + "<br/>");
-	  document.write("Media Salarios: " + somaSalario / vetor.length + "<br/>");
-	  document.write("Media Idades: " + somaIdade / vetor.length + "<br/>");
+	  document.write("Soma Salarios: R$ " + somaSalario + "<br/>");
+	  document.write("Media Salarios: R$ " + somaSalario / vetor.length + "<br/>");
+	  document.write("Media Idades: " + somaIdade / vetor.length + " anos. Média de "+ vetor.length +" pessoas.<br/>");
 	  
       </script>
 
